@@ -16,9 +16,9 @@ const winningCombos =[
 ];
 
 	// /*----- state variables -----*/
+let turn; 
+let winner; 
 let board;
-let turn;
-let winner;
 
 	// /*----- cached elements  -----*/
 
