@@ -21,9 +21,12 @@ let winner;
 let board;
 
 	// /*----- cached elements  -----*/
-
+// 1. call on singular button
 
 	// /*----- event listeners -----*/
+// for button: addEventListener to start new game
 
+// if (in game, and clicked) then display innerText: "Forfeit Game?"
+// else{ await winnder and InnerHTML play again}
 
 	// /*----- functions -----*/
