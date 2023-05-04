@@ -21,18 +21,36 @@ h1 {
 }
 
 h6 {
+    font-size: 2vh;
     color: green;
     text-decoration: underline;
     float: right;
 }
-.scores {
+
+
+
+
+.parentCtn {
     display: flex;
-    grid-template-rows: repeat(2, 10vh);
-    background-color: white;
-    color: black;
-    border: 10vh;
-    text-decoration: underline green;
+    grid-template-columns: 1fr 1fr;
+    height: 4vh;
+    gap: 50vh;
+    background-color: lightslategrey;
+    color: whitesmoke;
+    /* add in appropriate padding/border */
 }
+
+/* this is to apply to the 1,2,3 that will display in each flex box
+the two flex containers share a class of columns */
+/* .scoreOne, .scoreTwo { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+
+
 #board {
     display: grid;
     /* gap: -1px; */
@@ -43,11 +61,12 @@ h6 {
     width: auto;
 }
 
-/* buttons- #quit and #play */
-
 #board > div {
     margin: 1.1vmin;
     border: 0%;
     border-radius: 5%;
     background-color: lightgray;
 }
+
+
+/* buttons- #quit and #play */
