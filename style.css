@@ -28,28 +28,21 @@ h6 {
 }
 
 
-
-
-.parentCtn {
+.scoreBox {
     display: flex;
     grid-template-columns: 1fr 1fr;
     height: 4vh;
     gap: 50vh;
-    background-color: lightslategrey;
-    color: whitesmoke;
-    /* add in appropriate padding/border */
-}
-
-/* this is to apply to the 1,2,3 that will display in each flex box
-the two flex containers share a class of columns */
-/* .scoreOne, .scoreTwo { 
-    display: flex;
+    background-color: white;
+    color: green;
     justify-content: center;
     align-items: center;
-} */
-
-
-
+    /* add in appropriate padding/border */
+}
+.scoreBox > div {
+    grid-template-columns: 1fr 1fr;
+    background-color: red;
+}
 
 #board {
     display: grid;
@@ -68,5 +61,26 @@ the two flex containers share a class of columns */
     background-color: lightgray;
 }
 
+.quit {
+    margin-top: 3vmin;
+    background-color: black;
+    color: green;
+    border-radius: 50vmin;
+    border-style: solid;
+}
+.quit:hover {
+    color: black;
+    background-color: green;
+}
+.play {
+    margin-top: 3vmin;
+    background-color: black;
+    color: green;
+    border-radius: 50vmin;
+    border-style: solid;
+}
+.play:hover {
+    color: black;
+    background-color: green;
+}
 
-/* buttons- #quit and #play */
