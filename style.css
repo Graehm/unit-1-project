@@ -10,12 +10,12 @@ body {
 }
 
 header {
-    text-align: center;
+    /* text-align: center; */
     font-size: 10vh;
 }
 
 h1 {
-    text-align: center;
+    /* text-align: center; */
     font-size: 3vh;
     padding: 1vmin, auto, 10vmin, auto;
 }
@@ -30,14 +30,15 @@ h6 {
 
 .scoreBox {
     display: flex;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5fr 5fr;
+    justify-content: flex-end;
     height: 4vh;
-    gap: 50vh;
-    background-color: white;
+    gap: 1vh;
+    background-color: black;
     color: green;
-    justify-content: center;
-    align-items: center;
-    /* add in appropriate padding/border */
+    width: min-content;
+    /* margin-left: 1080px; */
+    /* align-items: center; */
 }
 .scoreBox > div {
     grid-template-columns: 1fr 1fr;
