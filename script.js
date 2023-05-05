@@ -1,5 +1,5 @@
 	// /*----- constants -----*/
-const PLAYERS {
+const PLAYERS = {
     'null': 'black',
     '1': 'X',
     '-1': 'O'
@@ -18,10 +18,15 @@ const winningCombos =[
 	// /*----- state variables -----*/
 let turn; 
 let winner; 
-let board;
+
 
 	// /*----- cached elements  -----*/
-// 1. call on singular button
+const winMessage = document.querySelector('h1');
+const scoring = document.querySelector;
+
+// scoreBox > score message;
+// the board;
+// the two buttons;
 
 	// /*----- event listeners -----*/
 // for button: addEventListener to start new game

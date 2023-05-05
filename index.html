@@ -1,44 +1,46 @@
-<!DOCTYPE html> 
-<html lang ="en"> 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
-        <link href="style.css" rel="stylesheet" type="text/css" />
-        <script defer src="script.js"></script>
-        <title>Tic-Tac-Toe</title>
-    </head>
-    <body>
-        <header>Tic Tac Toe</header>
-        <!-- toggle between winning message (computer or player) -->
-        <h1 id ="message">You/Computer Win(s)</h1>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script defer src="script.js"></script>
+    <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+    <header>Tic Tac Toe</header>
+    <!-- toggle between winning message (computer or player) -->
+    <h1 id="message">You/Computer Win(s)</h1>
+    <div id="box">
         <div>
             <h6>Best of Three</h6>
-            </br>
-            </br>
-            </br>
         </div>
-        <nav class = "scoreBox">
-            <div class= "scores">please</div>
-            <div class= "scores">work</div>
-        </nav> 
-        <section id ="board">
-            <div id="sq-0"></div>
-            <div id="sq-1"></div>
-            <div id="sq-2"></div>
-            <div id="sq-3"></div>
-            <div id="sq-4"></div>
-            <div id="sq-5"></div>
-            <div id="sq-6"></div>
-            <div id="sq-7"></div>
-            <div id="sq-8"></div>
-        </section>
-        
-            <button class ="quit">FORFEIT?</button>
-            <!-- possibly a single button that toggles between the two options depending on when the game is in play vs when a winner is had -->
-            <button class ="play">PLAY AGAIN</button>
-    </body>
+        <nav class="scoreBox">
+            <div class="scores">You: 1</div>
+            <div class="scores">The Machine: 2</div>
+        </nav>
+    </div>
+    <section id="board">
+        <div id="sq-0"></div>
+        <div id="sq-1"></div>
+        <div id="sq-2"></div>
+        <div id="sq-3"></div>
+        <div id="sq-4"></div>
+        <div id="sq-5"></div>
+        <div id="sq-6"></div>
+        <div id="sq-7"></div>
+        <div id="sq-8"></div>
+    </section>
+
+    <button class="quit">FORFEIT?</button>
+    <!-- possibly a single button that toggles between the two options depending on when the game is in play vs when a winner is had -->
+    <button class="play">PLAY AGAIN</button>
+</body>
+
 </html>
