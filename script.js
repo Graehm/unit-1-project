@@ -17,21 +17,23 @@ const winningCombos =[
 
 	// /*----- state variables -----*/
 let turn; 
-let winner; 
-
-
-	// /*----- cached elements  -----*/
+let winner;
+let board =[];
+	
+    // /*----- cached elements  -----*/
 const winMessage = document.querySelector('h1');
-const scoring = document.querySelector;
-
-// scoreBox > score message;
-// the board;
-// the two buttons;
+const scoring = document.querySelector('#box > .scoreBox');
+// how to select the two elements in flexbox. 
+const forfeitBtn = document.querySelector('.quit');
+const playAgainBtn = document.querySelector('.play');
+const boardTiles = [...document.querySelectorAll('#board > div')];
 
 	// /*----- event listeners -----*/
-// for button: addEventListener to start new game
-
-// if (in game, and clicked) then display innerText: "Forfeit Game?"
-// else{ await winnder and InnerHTML play again}
+document.getElementById('#board').addEventListener('click', move);
+playAgainBtn.addEventListener('click', init);
+forfeitBtn.addEventListener('click', init);
 
 	// /*----- functions -----*/
+function move = {
+    make move
+}
