@@ -21,19 +21,29 @@ let winner;
 let board =[];
 	
     // /*----- cached elements  -----*/
+// for winning message
 const winMessage = document.querySelector('h1');
+// to update score board --// how to select the two elements in flexbox. 
 const scoring = document.querySelector('#box > .scoreBox');
-// how to select the two elements in flexbox. 
+// quite game
 const forfeitBtn = document.querySelector('.quit');
+// play again
 const playAgainBtn = document.querySelector('.play');
+// for clickable board
 const boardTiles = [...document.querySelectorAll('#board > div')];
+
+
 
 	// /*----- event listeners -----*/
 document.getElementById('#board').addEventListener('click', move);
 playAgainBtn.addEventListener('click', init);
 forfeitBtn.addEventListener('click', init);
 
+
+
 	// /*----- functions -----*/
-function move = {
+
+
+    function move = {
     make move
 }
