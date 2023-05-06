@@ -16,8 +16,8 @@ const winningCombos =[
 ];
 
 	// /*----- state variables -----*/
-let turn; 
-let winner;
+let turn = null; 
+let winner = null;
 let board =[];
 	
     // /*----- cached elements  -----*/
@@ -42,8 +42,17 @@ forfeitBtn.addEventListener('click', init);
 
 
 	// /*----- functions -----*/
-
-
-    function move = {
-    make move
+function init() {
+    turn = 1;
+    winner = null;
+    board = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+    ];
+    render();
 }
+
+//     function move() {
+//     make move
+// }
