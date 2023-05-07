@@ -49,14 +49,16 @@ function init() {
     turn = 1;
     winner = null;
     board = [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0],
+        [0, 0, 0], //col 0
+        [0, 0, 0], //col 1
+        [0, 0, 0], //col 2
+        // r0, r1, r2  
     ];
     render();
 }
 
 // render the board to take updates 
+//how to set the background color 
 function board() {
     board.forEach(function (sq, idx) {
         const squares = document.getElementById(`sq-${idx}`);
@@ -66,7 +68,7 @@ function board() {
 
 // render scoring updates to flexbox items 
 //---Q: how to grab the elements for scoring
-//---Q: F counter to increase the points from 0-5 as games are won.
+//---Q: F counter to increase the points from 0-5 as games are won. how and where -- new but same scope or embedded function?
 function scoring(player, computer) {
     const playerPoints = document.getElementsByClassName(`scoreBox > playerScore`);
     playerPoints;
@@ -99,7 +101,7 @@ function playersMove(choice) {
     const idx = parseInt(choice.target.id.replace('sq-', ''));
     if (board[idx] || isNaN[idx] || winner)
         return;
-    else if (turn) {
+    else if (turn, 'click') {
         turn *= -1;
         winner = findWinner();
         render();
@@ -110,7 +112,7 @@ function playersMove(choice) {
 
 //handle computer move
 //-----randomized function looking for sq values of null to choose randomly until winner combo or tie game (no more null tiles)
-function computersMove() { };
+function computersMove(turn) { };
 //code to computers turn with randomized function
 
 //   else if (turn) {
@@ -123,16 +125,24 @@ function computersMove() { };
 // findWinner functions (horiz, vertical and diag)
 function findWinner() {
     for (let i = 0; i < winningCombos.length; i++) {
-        if (Math.abs(board[0] + board[1] + board[2]) === 3) return board[0];
-        if (Math.abs(board[3] + board[4] + board[5]) === 3) return board[3];
-        if (Math.abs(board[6] + board[7] + board[8]) === 3) return board[6];
-        if (Math.abs(board[0] + board[3] + board[6]) === 3) return board[0];
-        if (Math.abs(board[1] + board[4] + board[7]) === 3) return board[1];
-        if (Math.abs(board[2] + board[5] + board[8]) === 3) return board[2];
-        if (Math.abs(board[0] + board[4] + board[8]) === 3) return board[0];
-        if (Math.abs(board[2] + board[4] + board[6]) === 3) return board[2];
+        if (Math.abs(board[0] + board[1] + board[2]) === 3)
+            return board[0];
+        if (Math.abs(board[3] + board[4] + board[5]) === 3)
+            return board[3];
+        if (Math.abs(board[6] + board[7] + board[8]) === 3)
+            return board[6];
+        if (Math.abs(board[0] + board[3] + board[6]) === 3)
+            return board[0];
+        if (Math.abs(board[1] + board[4] + board[7]) === 3)
+            return board[1];
+        if (Math.abs(board[2] + board[5] + board[8]) === 3)
+            return board[2];
+        if (Math.abs(board[0] + board[4] + board[8]) === 3)
+            return board[0];
+        if (Math.abs(board[2] + board[4] + board[6]) === 3)
+            return board[2];
     } if (board.includes('')) return '';
-    return 'tie'
+    return 'tie';
 }
 
 // best three of 5 freq counter 
