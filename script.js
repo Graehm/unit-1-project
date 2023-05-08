@@ -60,11 +60,11 @@ function init() {
     render();
 }
 
-function render() {
+function renderNewBoard() {
     //boardTiles -- change from null to turn choice
     boardTiles.forEach(function(sq, idx) {
         sq.textContent = PLAYERS[board[idx]];
-
+        
     });
 }
 //to handle board tiles being clicked 
@@ -104,7 +104,7 @@ function winningMessage() {
 // ---Q: i feel like im missing something important that makes 
 function playersMove(choice) {
     const idx = parseInt(choice.target.id.replace('sq-', ''));
-    if (board[idx] || isNaN[idx] || winner)
+    if (board[idx] !== null)
         return;
     else if (turn, 'click') {
         turn *= -1;
