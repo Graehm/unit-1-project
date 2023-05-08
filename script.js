@@ -1,11 +1,11 @@
 // /*----- constants -----*/
 const PLAYERS = {
-    'null': 'white',
+    'null': '',
     '1': 'X',
     '-1': 'O'
 }
 const winningCombos = [
-    [0, 1, 2],
+    [0, 1, 2], 
     [3, 4, 5],
     [6, 7, 8],
     [0, 3, 6],
@@ -22,7 +22,7 @@ let board;
 
 // /*----- cached elements  -----*/
 // for winning message
-const winMessage = document.querySelector('h1');
+const winMessage = document.querySelector('#message');
 // to update score board --// how to select the two elements in flexbox. 
 const scoring = document.querySelector('#box > .scoreBox');
 // quite game
@@ -32,11 +32,14 @@ const playAgainBtn = document.querySelector('.play');
 // for clickable board
 //---Q: the ...document copies the arr
 const boardTiles = [...document.querySelectorAll('#board > div')];
+//or
+// const gameBoard = document.getElementById('#board')
+// const tileSquares = document.querySelector('.sq')
 
 
 
 // /*----- event listeners -----*/
-document.getElementById('#board').addEventListener('click', move);
+boardTiles.document.getElementById('#board').addEventListener('click', makeMove);
 playAgainBtn.addEventListener('click', init);
 forfeitBtn.addEventListener('click', init);
 
@@ -57,13 +60,14 @@ function init() {
     render();
 }
 
-// render the board to take updates 
-//how to set the background color 
-function board() {
-    board.forEach(function (sq, idx) {
-        const squares = document.getElementById(`sq-${idx}`);
-        squares.style.backgroundColor = PLAYERS[''];
-    })
+//to handle board tiles being clicked 
+//how to set the background color or display X or O image
+function makeMove() {
+    alert('board was clicked');
+    // board.forEach(function (sq, idx) {
+    //     const squares = document.getElementById(`sq-${idx}`);
+    //     squares.style.backgroundColor = PLAYERS[''];
+    // })
 }
 
 // render scoring updates to flexbox items 
@@ -146,3 +150,10 @@ function findWinner() {
 }
 
 // best three of 5 freq counter 
+
+function render() {
+    //boardTiles -- change from null to turn choice
+    boardTiles.forEach(function(sq, idx) {
+        sq.textContent = PLAYERS[board[idx]]
+    });
+}
