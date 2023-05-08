@@ -60,13 +60,18 @@ function init() {
     render();
 }
 
+function render() {
+    //boardTiles -- change from null to turn choice
+    boardTiles.forEach(function(sq, idx) {
+        sq.textContent = PLAYERS[board[idx]];
+
+    });
+}
 //to handle board tiles being clicked 
 //how to set the background color or display X or O image
 function makeMove() {
     alert('board was clicked');
-    // board.forEach(function (sq, idx) {
-    //     const squares = document.getElementById(`sq-${idx}`);
-    //     squares.style.backgroundColor = PLAYERS[''];
+
     // })
 }
 
@@ -94,10 +99,6 @@ function winningMessage() {
     }
 }
 
-// render controls (btns)
-function controlBtns() {
-
-}
 
 // handle player move -- use extraction to grab idx of a sq
 // ---Q: i feel like im missing something important that makes 
@@ -151,9 +152,7 @@ function findWinner() {
 
 // best three of 5 freq counter 
 
-function render() {
-    //boardTiles -- change from null to turn choice
-    boardTiles.forEach(function(sq, idx) {
-        sq.textContent = PLAYERS[board[idx]]
-    });
-}
+// render controls (btns)
+function controlBtns() {
+
+} 
