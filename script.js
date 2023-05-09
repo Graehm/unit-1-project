@@ -49,21 +49,95 @@ function init() {
 }
 
 
-function makeMove(evt){
+
+//with safe guard, cann access first idx of all columns
+function makeMove(evt) {
     const tileNumber = evt.target.dataset.idx;
+    // if(winner || board[tileNumber]) return;
     board[tileNumber] = turn;
     turn *= -1;
+    winner = findWinner();
+    winningMessage.innerText = "Game On Bud"
     render();
 }
 
+
+// //handle computer move
+// //-----randomized function looking for sq values of null to choose randomly until winner combo or tie game (no more null tiles)
+// function computersMove(turn) { };
+// //code to computers turn with randomized function
+
+// //   else if (turn) {
+// //     turn *= -1;
+// //     winner = findWinner();
+// //     render();
+// // }
+
+
+
+function findWinner() {
+    for (let i = 0; i < winningCombos.length; i++) {
+        if (Math.abs(board[0] + board[1] + board[2]) === 3)
+            return board[0];
+        if (Math.abs(board[3] + board[4] + board[5]) === 3)
+            return board[3];
+        if (Math.abs(board[6] + board[7] + board[8]) === 3)
+            return board[6];
+        if (Math.abs(board[0] + board[3] + board[6]) === 3)
+            return board[0];
+        if (Math.abs(board[1] + board[4] + board[7]) === 3)
+            return board[1];
+        if (Math.abs(board[2] + board[5] + board[8]) === 3)
+            return board[2];
+        if (Math.abs(board[0] + board[4] + board[8]) === 3)
+            return board[0];
+        if (Math.abs(board[2] + board[4] + board[6]) === 3)
+            return board[2];
+    }
+    if (board.includes(null)) return '';
+    return 'tie';
+}
+
+// render controls (btns)
+// function controlBtns() {
+// if (!winner) {
+//     playAgainBtn.disabled
+//         forfeit abled. 
+//     } else (){
+//     if (winner) {
+//         playAgainBtn
+//     }
+// }
+
+
+
 //render it all to DOM with embedded executer function 
 function render() {
-    tilePL.forEach(function(tileSG, idx) {
+    tilePL.forEach(function (tileSG, idx) {
         tileSG.textContent = PLAYERS[board[idx]];
     });
+    if (!winner) {
+        winningMessage.textContent = `Player ${PLAYERS[turn]}'s turn`;
+    } else if (winner === 'tie') {
+        winningMessage.textContent = "It's A Tie!";
+    } else {
+        winningMessage.textContent = `Player ${PLAYERS[winner]} Wins!`;
+    }
 };
 
-
+// //render winning message DIFFERENT METHOD TO ABOVE --SEP FUNCTIONS 
+// //---Q: how to write that computer or player are winners?
+// function winningMessage() {
+//     if (findWinner === 'tie') {
+//         h6.innerHTML = "Tie Game!";
+//     } else if (findWinner === player) {
+//         //player > computer;
+//         h6.innerHTML = "Man beats Machine!";
+//     } else if (findWinner === computer) {
+//         //computer > player;
+//         h6.innerHTML = "The Machine Prevails";
+//     }
+// }
 
 
 // // render scoring updates to flexbox items 
@@ -79,83 +153,5 @@ function render() {
 
 
 
-// //render winning message
-// //---Q: how to write that computer or player are winners?
-// function winningMessage() {
-//     if (findWinner === 'tie') {
-//         h6.innerHTML = "Tie Game!";
-//     } else if (findWinner === player) {
-//         //player > computer;
-//         h6.innerHTML = "Man beats Machine!";
-//     } else if (findWinner === computer) {
-//         //computer > player;
-//         h6.innerHTML = "The Machine Prevails";
-//     }
-// }
-// //try to display in-game message and init title of X, make your move! 
-// // function h1Message(preGame, endGame) {
-// //     if (board === null) {
-// //         // dispay "X, Make Your Move!";
-// //     else if (board !== null) {
-// //         display ''
-// //     else display winningMessage;
-// //         }x
-// //     }
-// // }
-
-// // handle player move -- use extraction to grab idx of a sq
-// // ---Q: i feel like im missing something important that makes 
-// function playersMove(choice) {
-//     const idx = parseInt(choice.target.id.replace('sq-', ''));
-//     if (board[idx] !== null)
-//         return;
-//     else if (turn, 'click') {
-//         turn *= -1;
-//         winner = findWinner();
-//         render();
-//     }
-// }
-
-
-
-// //handle computer move
-// //-----randomized function looking for sq values of null to choose randomly until winner combo or tie game (no more null tiles)
-// function computersMove(turn) { };
-// //code to computers turn with randomized function
-
-// //   else if (turn) {
-// //     turn *= -1;
-// //     winner = findWinner();
-// //     render();
-// // }
-
-
-// // findWinner functions (horiz, vertical and diag)
-// function findWinner() {
-//     for (let i = 0; i < winningCombos.length; i++) {
-//         if (Math.abs(board[0] + board[1] + board[2]) === 3)
-//             return board[0];
-//         if (Math.abs(board[3] + board[4] + board[5]) === 3)
-//             return board[3];
-//         if (Math.abs(board[6] + board[7] + board[8]) === 3)
-//             return board[6];
-//         if (Math.abs(board[0] + board[3] + board[6]) === 3)
-//             return board[0];
-//         if (Math.abs(board[1] + board[4] + board[7]) === 3)
-//             return board[1];
-//         if (Math.abs(board[2] + board[5] + board[8]) === 3)
-//             return board[2];
-//         if (Math.abs(board[0] + board[4] + board[8]) === 3)
-//             return board[0];
-//         if (Math.abs(board[2] + board[4] + board[6]) === 3)
-//             return board[2];
-//     } if (board.includes('')) return '';
-//     return 'tie';
-// }
-
 // // best three of 5 freq counter 
 
-// // render controls (btns)
-// function controlBtns() {
-
-// } 

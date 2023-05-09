@@ -1,11 +1,9 @@
-May 1-3/4: complete html/css | js write what you can, pseudo the rest
-May 3/4-7: have JS working roughly 
-May 8-10: refine
+1.--why is turn toggle interferring with screen options
+2.--change h1 message from intial to after first turn is taken(having issues)
 
-Design touches: 1. flex box to media query and shrink at certain size so it doesnt overlap with board. 
-
-Js: --//single arr vs 2d arr. 1d easier to read for me, might convert code to 2d arr logic. 
-
---// loop through winning combo array vs use 2d array 
---// is itokay if forfeit and play computer are replacemebt for best of 3 out of 5
+next things: 
+1-- computer AI randomized function 
+2-- control buttons during and after game play
+3-- render the score board with f counter. 
+4-- best 3 of 5 f counter 
 
