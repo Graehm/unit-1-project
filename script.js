@@ -27,15 +27,11 @@ const tilePL = document.querySelectorAll('.tile');
 const forfeitBtn = document.querySelector('.quit');
 const playAgainBtn = document.querySelector('.play');
 
-
 // /*----- event listeners -----*/
 //
-boardTiles.addEventListener('click', newGame);
+boardTiles.addEventListener('click', makeMove);
 playAgainBtn.addEventListener('click', init);
 forfeitBtn.addEventListener('click', init);
-
-
-
 
 // /*----- functions -----*/
 init();
@@ -53,14 +49,18 @@ function init() {
 }
 
 
-function newGame(){
-
+function makeMove(evt){
+    const tileNumber = evt.target.dataset.idx;
+    board[tileNumber] = turn;
+    turn *= -1;
+    render();
 }
+
 //render it all to DOM with embedded executer function 
 function render() {
     tilePL.forEach(function(tileSG, idx) {
         tileSG.textContent = PLAYERS[board[idx]];
-    })
+    });
 };
 
 
