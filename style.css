@@ -5,10 +5,11 @@
 }
 body {
     background-color: black;
-    color: whitesmoke;
+    color: black;
 }
 header {
     font-size: 10vh;
+    color: whitesmoke;
 }
 h1 {
     font-size: 3vh;
@@ -25,7 +26,7 @@ h6 {
 
     position: absolute;
     right: 0;
-    padding-right: 95px;
+    padding-right: 0px;
 
 }
 .scoreBox {
@@ -46,12 +47,14 @@ h6 {
     grid-template-columns: repeat(3, 21vh);
     justify-content: center;
     background-color: black;
+    color: black;
     width: auto;
 }
 #board > div {
     margin: 1.1vmin;
     border: 0%;
     border-radius: 5%;
+    color: black;
     background-color: lightgray;
 }
 .quit {

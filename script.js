@@ -19,67 +19,50 @@ const winningCombos = [
 let turn;
 let winner;
 let board;
-let message;
 
 // /*----- cached elements  -----*/
-// for winning message
-const winMessage = document.querySelector('#message');
-// to update score board --// how to select the two elements in flexbox. 
-const scoring = document.querySelector('#box > .scoreBox');
-// quite game
+const winningMessage = document.querySelector('h1');
+const boardTiles = document.getElementById('board');
+const tilePL = document.querySelectorAll('.tile');
 const forfeitBtn = document.querySelector('.quit');
-// play again
 const playAgainBtn = document.querySelector('.play');
-// for clickable board
-//---Q: the ...document copies the arr
-
-const boardTiles = [...document.querySelectorAll('#board > div')];
-//or
-// const gameBoard = document.getElementById('#board')
-// const tileSquares = document.querySelector('.sq')--will have to reset all id to same id
-
 
 
 // /*----- event listeners -----*/
-// boardTiles.addEventListener('click', makeMove)
-// boardTiles.document.getElementById('board').addEventListener('click', makeMove);
+//
+boardTiles.addEventListener('click', newGame);
 playAgainBtn.addEventListener('click', init);
 forfeitBtn.addEventListener('click', init);
 
 
 
+
 // /*----- functions -----*/
-//initial load start game / playagain and forfeit too
 init();
 
 function init() {
-    alert('alive?')
-    // message = "X, Make Your Move!";
-    // turn = 1;
-    // winner = null;
-    // board = [
-    //     [0, 0, 0], //col 0
-    //     [0, 0, 0], //col 1
-    //     [0, 0, 0], //col 2
-    //     // r0, r1, r2  
-    // ];
-    // render();
+    turn = 1;
+    winner = null;
+    board = [
+        [0, 0, 0], //col 0
+        [0, 0, 0], //col 1
+        [0, 0, 0], //col 2
+        // r0, r1, r2  
+    ];
+    render();
 }
 
 
+function newGame(){
 
+}
+//render it all to DOM with embedded executer function 
+function render() {
+    tilePL.forEach(function(tileSG, idx) {
+        tileSG.textContent = PLAYERS[board[idx]];
+    })
+};
 
-
-
-
-// //to handle board tiles being clicked 
-// //boardTiles -- change from null to turn choice
-// function makeMove() {
-//     alert('connected')
-//     // // boardTiles.forEach(function () {
-//     // //     .textContent = PLAYERS[[]];
-//     // });
-// };
 
 
 
@@ -94,7 +77,6 @@ function init() {
 // }
 
 
-// //
 
 
 // //render winning message
