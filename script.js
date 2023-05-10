@@ -53,11 +53,12 @@ function init() {
 //with safe guard, cann access first idx of all columns
 function makeMove(evt) {
     const tileNumber = evt.target.dataset.idx;
-    // if(winner || board[tileNumber]) return;
+    // if (winner || boardTiles[tileNumber]) return;
+    // if (boardTiles[tileNumber]) return;
     board[tileNumber] = turn;
     turn *= -1;
     winner = findWinner();
-    winningMessage.innerText = "Game On Bud"
+    // winningMessage.innerHTML = "Game On Bud"
     render();
 }
 
@@ -97,17 +98,6 @@ function findWinner() {
     if (board.includes(null)) return '';
     return 'tie';
 }
-
-// render controls (btns)
-// function controlBtns() {
-// if (!winner) {
-//     playAgainBtn.disabled
-//         forfeit abled. 
-//     } else (){
-//     if (winner) {
-//         playAgainBtn
-//     }
-// }
 
 
 

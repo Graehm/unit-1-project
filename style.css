@@ -69,21 +69,6 @@ h6 {
     background-color: lightgray;
 }
 
-.quit {
-    margin-top: 3vmin;
-    font-size: 3vh;
-    background-color: black;
-    color: green;
-    border-radius: 50vmin;
-    border-style: solid;
-}
-
-.quit:hover {
-    color: black;
-    background-color: green;
-    cursor: pointer;
-}
-
 .play {
     margin-top: 3vmin;
     font-size: 3vh;
@@ -91,7 +76,7 @@ h6 {
     color: green;
     border-radius: 50vmin;
     border-style: solid;
-}
+} 
 
 .play:hover {
     color: black;
