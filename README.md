@@ -1,8 +1,13 @@
+need help w/:
 1.--why is turn toggle interferring with screen options
-2.--change h1 message from intial to after first turn is taken(having issues)
+2.-- AI randomized function 
 
-next things: 
-1-- computer AI randomized function 
-3-- render the score board with f counter. 
-4-- best 3 of 5 f counter 
+fix things: 
+1- h1 message fix: add as initial render, and if else statement for board being clicked
+2- play again btn fix add function 
+3- fix flexbox
+
+To Do:
+best 3 of 5 0f coutner or hack
+score board updates
 

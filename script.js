@@ -24,14 +24,12 @@ let board;
 const winningMessage = document.querySelector('h1');
 const boardTiles = document.getElementById('board');
 const tilePL = document.querySelectorAll('.tile');
-const forfeitBtn = document.querySelector('.quit');
 const playAgainBtn = document.querySelector('.play');
 
 // /*----- event listeners -----*/
 //
 boardTiles.addEventListener('click', makeMove);
 playAgainBtn.addEventListener('click', init);
-forfeitBtn.addEventListener('click', init);
 
 // /*----- functions -----*/
 init();
