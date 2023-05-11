@@ -116,20 +116,21 @@ function renderBtns() {
 function renderScoreBoard() {
     document.querySelector('.scoreOne').textContent = xScore;
     document.querySelector('.scoreTwo').textContent = oScore;
-    if(xScore > ) {
-        if(findWinner(xScore))
-        return 
-    }
-render();
+
+    if xScore = findwinner 
+        xScore +=1 
+    else if oScore = +=1
+renderScoreBoard(xScore, oScore);
+else if (xScore === 3) {
+    game over
+}
+else if(oScore === 3){
+    game over 
+}
 };
 
 
-
-
-
-
-
-
+// ---------------------------------------------------------------
 
 // // render scoring updates to flexbox items 
 // //---Q: how to grab the elements for scoring
