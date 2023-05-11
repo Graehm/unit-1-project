@@ -19,14 +19,14 @@ const winningCombos = [
 let turn;
 let winner;
 let board;
+let tileCounter = 0;
 
 // /*----- cached elements  -----*/
-const winningMessage = document.querySelector('h1');
+const winningMessage = document.querySelector('#message');
 const boardTiles = document.getElementById('board');
 const tilePL = document.querySelectorAll('.tile');
 const forfeitBtn = document.querySelector('.quit');
 const playAgainBtn = document.querySelector('.play');
-
 // /*----- event listeners -----*/
 //
 boardTiles.addEventListener('click', makeMove);
@@ -45,6 +45,7 @@ function init() {
         [0, 0, 0], //col 2
         // r0, r1, r2  
     ];
+    tileCounter = 0;
     render();
 }
 
@@ -54,9 +55,11 @@ function makeMove(evt) {
     // if (winner || boardTiles[tileNumber]) return;
     // if (boardTiles[tileNumber]) return;
     board[tileNumber] = turn;
-    turn *= -1;
+    // console.log(findWinner());
+    tileCounter++;
     winner = findWinner();
     render();
+
 }
 
 function findWinner() {
@@ -78,8 +81,12 @@ function findWinner() {
         if (Math.abs(board[2] + board[4] + board[6]) === 3)
             return board[2];
     }
-    if (board.includes(null)) return;
-    return 'tie';
+    if (tileCounter === 9) return "tie"
+    return null
+    
+    
+    // (board.includes(null));
+    // return 'tie';
 };
 // for (let winner = 0; winner <= 3; i++) {
 // if (winner === 1) {
@@ -94,17 +101,18 @@ function render() {
         tileSG.textContent = PLAYERS[board[idx]];
     });
     renderWinningMsg();
+    turn *=-1;
     renderBtns();
-    renderScoreBoard();
+    // renderScoreBoard();
 };
 
 function renderWinningMsg() {
     if (winner === 'tie') {
-        winningMessage.innerHTML = "It's A Tie!";
-    } else if (!winner) {
-        winningMessage.innerHTML = `Player ${PLAYERS[turn]}'s Turn`;
-    } else {
-        winningMessage.innerHTML = `Player ${PLAYERS[winner]} Wins!`;
+        winningMessage.textContent = "It's A Tie!";
+    } else if (winner===null) {console.log("something");
+        winningMessage.textContent = `Player ${PLAYERS[turn]}'s Turn`;
+    } else { 
+        winningMessage.textContent = `Player ${PLAYERS[winner]} Wins!`;
     }
 };
 
@@ -113,34 +121,32 @@ function renderBtns() {
     playAgainBtn.disabled = winner;
 };
 
-function renderScoreBoard() {
-    document.querySelector('.scoreOne').textContent = xScore;
-    document.querySelector('.scoreTwo').textContent = oScore;
+// function renderScoreBoard() {
+//     document.querySelector('.scoreOne').textContent = xScore;
+//     document.querySelector('.scoreTwo').textContent = oScore;
+//     // set i=findWinner?
+//     for (let i = 0; i >= 3; i++) {
+//         if (xScore ===3) {
+//             xScore += 1 || end game;
+//         } else if (oScore = findWinner) {
+//             oScore += 1 || end game;
+//         } renderScoreBoard();
+//         if (xScore === 3) {
+//         game over && display winningMessage;
 
-    if xScore = findwinner 
-        xScore +=1 
-    else if oScore = +=1
-renderScoreBoard(xScore, oScore);
-else if (xScore === 3) {
-    game over
-}
-else if(oScore === 3){
-    game over 
-}
-};
+//         }
+//         else if (oScore === 3) {
+//         game over && display winningMessage;
+//         }
+//     }
 
 
+// };
+// cache the elements
+// add to initial function 
+
+// use win variable 
 // ---------------------------------------------------------------
-
-// // render scoring updates to flexbox items 
-// //---Q: how to grab the elements for scoring
-// //---Q: F counter to increase the points from 0-5 as games are won. how and where -- new but same scope or embedded function?
-// function scoreBoard(player, computer) {
-//     const playerPoints = document.getElementsByClassName(`scoreBox > playerScore`);
-//     playerPoints;
-//     const computerPoints = document.getElementsByClassName(`scoreBox > computerScore`);
-//     computerPoints;
-// }
 
 
 // // best three of 5 freq counter 
@@ -149,3 +155,10 @@ else if(oScore === 3){
 //     } 
 //     repeat until i>=3 
 //     then findWinner();
+
+// for (let winner = 0; winner <= 3; i++) {
+// if (winner === 1) {
+//     player1wins++;
+// } else {
+//     player2wins++
+// }
