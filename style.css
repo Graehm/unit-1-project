@@ -12,7 +12,6 @@ body {
 header {
     font-size: 10vh;
     color: whitesmoke;
-
 }
 
 h1 {
@@ -42,6 +41,10 @@ h6 {
     background-color: black;
     color: green;
     width: fit-content;
+
+    /* @media (max-width:1800px) {
+        flex-direction: columns;
+    } */
 }
 
 .scoreBox>div {
@@ -78,6 +81,7 @@ h6 {
     border-radius: 50vmin;
     border-style: solid;
 }
+
 .quit:hover {
     color: black;
     background-color: green;
@@ -85,8 +89,8 @@ h6 {
 }
 
 .quit:disabled {
-background-color: black;
-color: darkgray;
+    background-color: black;
+    color: darkgray;
 }
 
 .play {
@@ -96,7 +100,7 @@ color: darkgray;
     color: green;
     border-radius: 50vmin;
     border-style: solid;
-} 
+}
 
 .play:hover {
     color: black;
