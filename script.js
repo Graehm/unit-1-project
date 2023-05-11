@@ -24,11 +24,13 @@ let board;
 const winningMessage = document.querySelector('h1');
 const boardTiles = document.getElementById('board');
 const tilePL = document.querySelectorAll('.tile');
+const forfeitBtn = document.querySelector('.quit');
 const playAgainBtn = document.querySelector('.play');
 
 // /*----- event listeners -----*/
 //
 boardTiles.addEventListener('click', makeMove);
+forfeitBtn.addEventListener('click', init);
 playAgainBtn.addEventListener('click', init);
 
 // /*----- functions -----*/
@@ -87,7 +89,7 @@ function findWinner() {
         if (Math.abs(board[2] + board[4] + board[6]) === 3)
             return board[2];
     }
-    if (board.includes(null)) return null;
+    if (board.includes(null)) return;
     return 'tie';
 };
 
@@ -96,6 +98,8 @@ function render() {
     tilePL.forEach(function (tileSG, idx) {
         tileSG.textContent = PLAYERS[board[idx]];
     });
+    forfeitBtn.disabled = !winner;
+    playAgainBtn.disabled = winner;
     renderWinningMsg();
     renderBtn();
     renderScoreBoard();
@@ -118,13 +122,13 @@ function renderScoreBoard () {
 }; 
 
 
-function renderBtn() {
-    if (!winner) {
-        document.querySelector('.play').disabled = false;
-    } else {
-        document.querySelector('.play').disabled = true;
-    }
-};
+// function renderBtn() {
+//     if (!winner) {
+//         document.querySelector('.play').disabled = true;
+//     } else {
+//         document.querySelector('.play').disabled = true;
+//     }
+// };
 
 
 
@@ -160,4 +164,8 @@ function renderBtn() {
 
 
 // // best three of 5 freq counter 
-
+// loop with counter 
+//     for (let i = 0; i>1; i++){
+//     } 
+//     repeat until i>=3 
+//     then findWinner();

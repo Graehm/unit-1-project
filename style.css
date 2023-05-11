@@ -32,8 +32,8 @@ h6 {
     position: absolute;
     right: 0;
     padding-right: 0px;
-
 }
+
 
 .scoreBox {
     display: flex;
@@ -60,11 +60,33 @@ h6 {
 }
 
 #board>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 1.1vmin;
-    border: 0%;
     border-radius: 5%;
-    color: black;
+    color: green;
+    font-size: 88px;
     background-color: lightgray;
+}
+
+.quit {
+    margin-top: 3vmin;
+    font-size: 3vh;
+    background-color: black;
+    color: green;
+    border-radius: 50vmin;
+    border-style: solid;
+}
+.quit:hover {
+    color: black;
+    background-color: green;
+    cursor: pointer;
+}
+
+.quit:disabled {
+background-color: black;
+color: darkgray;
 }
 
 .play {
