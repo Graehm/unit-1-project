@@ -1,6 +1,6 @@
 // /*----- constants -----*/
 const PLAYERS = {
-    'null': '',
+    'null': null,
     '1': 'X',
     '-1': 'O'
 }
@@ -46,8 +46,6 @@ function init() {
     render();
 }
 
-
-
 //with safe guard, cann access first idx of all columns
 function makeMove(evt) {
     const tileNumber = evt.target.dataset.idx;
@@ -56,10 +54,8 @@ function makeMove(evt) {
     board[tileNumber] = turn;
     turn *= -1;
     winner = findWinner();
-    // winningMessage.innerHTML = "Game On Bud"
     render();
 }
-
 
 // //handle computer move
 // //-----randomized function looking for sq values of null to choose randomly until winner combo or tie game (no more null tiles)
@@ -71,8 +67,6 @@ function makeMove(evt) {
 // //     winner = findWinner();
 // //     render();
 // // }
-
-
 
 function findWinner() {
     for (let i = 0; i < winningCombos.length; i++) {
@@ -93,25 +87,40 @@ function findWinner() {
         if (Math.abs(board[2] + board[4] + board[6]) === 3)
             return board[2];
     }
-    if (board.includes(null)) return '';
+    if (board.includes(null)) return null;
     return 'tie';
-}
-
-
+};
 
 //render it all to DOM with embedded executer function 
 function render() {
     tilePL.forEach(function (tileSG, idx) {
         tileSG.textContent = PLAYERS[board[idx]];
     });
-    if (!winner) {
-        winningMessage.textContent = `Player ${PLAYERS[turn]}'s turn`;
-    } else if (winner === 'tie') {
-        winningMessage.textContent = "It's A Tie!";
+    renderWinningMsg();
+    renderBtn();
+    renderScoreBoard();
+};
+
+
+function renderWinningMsg() {
+    if (winner === 'tie') {
+        winningMessage.innerHTML = "It's A Tie!";
+    } else if (!winner) {
+        winningMessage.innerHTML = `Player ${PLAYERS[turn]}'s Turn`;
     } else {
-        winningMessage.textContent = `Player ${PLAYERS[winner]} Wins!`;
+        winningMessage.innerHTML = `Player ${PLAYERS[winner]} Wins!`;
     }
 };
+
+function renderBtn() {
+    if (!winner) {
+        document.querySelector('.play').disabled = false;
+    } else {
+        document.querySelector('.play').disabled = true;
+    }
+};
+
+
 
 // //render winning message DIFFERENT METHOD TO ABOVE --SEP FUNCTIONS 
 // //---Q: how to write that computer or player are winners?
@@ -128,6 +137,11 @@ function render() {
 // }
 
 
+
+
+
+
+
 // // render scoring updates to flexbox items 
 // //---Q: how to grab the elements for scoring
 // //---Q: F counter to increase the points from 0-5 as games are won. how and where -- new but same scope or embedded function?
@@ -137,8 +151,6 @@ function render() {
 //     const computerPoints = document.getElementsByClassName(`scoreBox > computerScore`);
 //     computerPoints;
 // }
-
-
 
 
 // // best three of 5 freq counter 

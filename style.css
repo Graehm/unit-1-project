@@ -83,3 +83,8 @@ h6 {
     background-color: green;
     cursor: pointer;
 }
+
+.play:disabled {
+    background-color: black;
+    color: darkgray;
+}
