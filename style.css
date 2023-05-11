@@ -29,10 +29,10 @@ h6 {
 
 #box {
     position: absolute;
+    margin-right: 200px;
     right: 0;
     padding-right: 0px;
 }
-
 
 .scoreBox {
     display: flex;
@@ -41,10 +41,6 @@ h6 {
     background-color: black;
     color: green;
     width: fit-content;
-
-    /* @media (max-width:1800px) {
-        flex-direction: columns;
-    } */
 }
 
 .scoreBox>div {

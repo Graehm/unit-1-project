@@ -89,15 +89,12 @@ function findWinner() {
 // }
 
 
-//render it all to DOM with embedded executer function 
 function render() {
     tilePL.forEach(function (tileSG, idx) {
         tileSG.textContent = PLAYERS[board[idx]];
     });
-    forfeitBtn.disabled = !winner;
-    playAgainBtn.disabled = winner;
     renderWinningMsg();
-    // renderBtn();
+    renderBtns();
     renderScoreBoard();
 };
 
@@ -111,16 +108,27 @@ function renderWinningMsg() {
     }
 };
 
-// function renderBtn() {
-//     if (!winner) {
-//         document.querySelector('.play').disabled = true;
-//     } else {
-//         document.querySelector('.play').disabled = true;
-//     }
-// };
+function renderBtns() {
+    forfeitBtn.disabled = !winner;
+    playAgainBtn.disabled = winner;
+};
 
 function renderScoreBoard() {
+    document.querySelector('.scoreOne').textContent = xScore;
+    document.querySelector('.scoreTwo').textContent = oScore;
+    if(xScore > ) {
+        if(findWinner(xScore))
+        return 
+    }
+render();
 };
+
+
+
+
+
+
+
 
 
 // // render scoring updates to flexbox items 
