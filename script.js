@@ -112,6 +112,12 @@ function renderWinningMsg() {
     }
 };
 
+
+function renderScoreBoard () {
+
+}; 
+
+
 function renderBtn() {
     if (!winner) {
         document.querySelector('.play').disabled = false;

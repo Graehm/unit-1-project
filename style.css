@@ -29,8 +29,6 @@ h6 {
 }
 
 #box {
-    /* media query?  */
-
     position: absolute;
     right: 0;
     padding-right: 0px;
