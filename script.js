@@ -59,17 +59,6 @@ function makeMove(evt) {
     render();
 }
 
-// //handle computer move
-// //-----randomized function looking for sq values of null to choose randomly until winner combo or tie game (no more null tiles)
-// function computersMove(turn) { };
-// //code to computers turn with randomized function
-
-// //   else if (turn) {
-// //     turn *= -1;
-// //     winner = findWinner();
-// //     render();
-// // }
-
 function findWinner() {
     for (let i = 0; i < winningCombos.length; i++) {
         if (Math.abs(board[0] + board[1] + board[2]) === 3)
@@ -92,6 +81,13 @@ function findWinner() {
     if (board.includes(null)) return;
     return 'tie';
 };
+// for (let winner = 0; winner <= 3; i++) {
+// if (winner === 1) {
+//     player1wins++;
+// } else {
+//     player2wins++
+// }
+
 
 //render it all to DOM with embedded executer function 
 function render() {
@@ -101,10 +97,9 @@ function render() {
     forfeitBtn.disabled = !winner;
     playAgainBtn.disabled = winner;
     renderWinningMsg();
-    renderBtn();
+    // renderBtn();
     renderScoreBoard();
 };
-
 
 function renderWinningMsg() {
     if (winner === 'tie') {
@@ -116,12 +111,6 @@ function renderWinningMsg() {
     }
 };
 
-
-function renderScoreBoard () {
-
-}; 
-
-
 // function renderBtn() {
 //     if (!winner) {
 //         document.querySelector('.play').disabled = true;
@@ -130,26 +119,8 @@ function renderScoreBoard () {
 //     }
 // };
 
-
-
-// //render winning message DIFFERENT METHOD TO ABOVE --SEP FUNCTIONS 
-// //---Q: how to write that computer or player are winners?
-// function winningMessage() {
-//     if (findWinner === 'tie') {
-//         h6.innerHTML = "Tie Game!";
-//     } else if (findWinner === player) {
-//         //player > computer;
-//         h6.innerHTML = "Man beats Machine!";
-//     } else if (findWinner === computer) {
-//         //computer > player;
-//         h6.innerHTML = "The Machine Prevails";
-//     }
-// }
-
-
-
-
-
+function renderScoreBoard() {
+};
 
 
 // // render scoring updates to flexbox items 

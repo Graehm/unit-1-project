@@ -37,15 +37,15 @@ h6 {
 
 .scoreBox {
     display: flex;
-    gap: 8vh;
-    height: 2vh;
+    margin-right: 50px;
+    gap: 2vh;
     background-color: black;
     color: green;
     width: fit-content;
 }
 
 .scoreBox>div {
-    font-size: 2.8vh;
+    font-size: 3vh;
     color: red;
 }
 
