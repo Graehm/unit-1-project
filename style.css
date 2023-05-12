@@ -36,7 +36,6 @@ h6 {
 
 .scoreBox {
     display: flex;
-    margin-right: 50px;
     gap: 2vh;
     background-color: black;
     color: green;

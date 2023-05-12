@@ -20,7 +20,9 @@ let turn;
 let winner;
 let board;
 let tileCounter = 0;
-let scores = 0;
+// let playerOneScore = 0;
+// let playerNegOne = 0;
+
 
 // /*----- cached elements  -----*/
 const winningMessage = document.querySelector('#message');
@@ -28,8 +30,11 @@ const boardTiles = document.getElementById('board');
 const tilePL = document.querySelectorAll('.tile');
 const forfeitBtn = document.querySelector('.quit');
 const playAgainBtn = document.querySelector('.play');
+// const playerX = document.querySelector('.scoreOne');
+// const playerO = document.querySelector('.scoreTwo');
+
 // /*----- event listeners -----*/
-//
+
 boardTiles.addEventListener('click', makeMove);
 forfeitBtn.addEventListener('click', init);
 playAgainBtn.addEventListener('click', init);
@@ -56,6 +61,7 @@ function makeMove(evt) {
     board[tileNumber] = turn;
     tileCounter++;
     winner = findWinner();
+    turn *= -1;
     render();
 }
 
@@ -81,20 +87,12 @@ function findWinner() {
     if (tileCounter === 9) return "tie"
     return null
 };
-// for (let winner = 0; winner <= 3; i++) {
-// if (winner === 1) {
-//     player1wins++;
-// } else {
-//     player2wins++
-// }
-
 
 function render() {
     tilePL.forEach(function (tileSG, idx) {
         tileSG.textContent = PLAYERS[board[idx]];
     });
     renderWinningMsg();
-    turn *=-1;
     renderBtns();
     // renderScoreBoard();
 };
@@ -103,7 +101,6 @@ function renderWinningMsg() {
     if (winner === 'tie') {
         winningMessage.textContent = "It's A Tie!";
     } else if (winner === null) {
-        console.log("something");
         winningMessage.textContent = `Player ${PLAYERS[turn]}'s Turn`;
     } else {
         winningMessage.textContent = `Player ${PLAYERS[winner]} Wins!`;
@@ -115,12 +112,18 @@ function renderBtns() {
     playAgainBtn.disabled = !winner;
 };
 
+
+
+let playerOneScore = 0;
+// let playerNegOne = 0;
+
+
 // function renderScoreBoard() {
 //     document.querySelector('.scoreOne').textContent = xScore;
 //     document.querySelector('.scoreTwo').textContent = oScore;
 //     // set i=findWinner?
-//     for (let i = 0; i >= 3; i++) {
-//         if (xScore ===3) {
+//     for (let winner = 0; winner >= 3; winner++) {
+//         if (xScore === 3) {
 //             xScore += 1 || end game;
 //         } else if (oScore = findWinner) {
 //             oScore += 1 || end game;
@@ -133,13 +136,24 @@ function renderBtns() {
 //         game over && display winningMessage;
 //         }
 //     }
-
-
 // };
-// cache the elements
-// add to initial function 
 
-// use win variable 
+function renderRounds(threeWins) {
+    let playerOneScore = 0;
+    let playerNegOne = 0;
+    while (playerOneScore < threeWins && playerNegOne < threeWins) {
+        const play = makeMove();
+        if (playerOneScore === winner) {
+            playerOneScore++;
+        } else if (playerNegOne === winner) {
+            playerNegOne++;
+        }
+    }renderScoreBoard();
+    if (playerOneScore || playerNegOne === threeWins) {
+
+    }
+}
+
 // ---------------------------------------------------------------
 
 
