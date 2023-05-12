@@ -150,7 +150,8 @@ function renderRounds(threeWins) {
         }
     }renderScoreBoard();
     if (playerOneScore || playerNegOne === threeWins) {
-
+        winningMessage = textContent = `Player ${PLAYERS[winner]} Wins the Game!`;
+        init();
     }
 }
 
