@@ -20,3 +20,9 @@ link: (http://127.0.0.1:5500/)
 ## Next Steps/Icebox Items
 I hope to add sound effects to the game board, and winning message. Additionally, I'd like to add an AI feature making the game single player. 
 
+
+
+
+variable that accounts for turns 
+
+for every click, increase the variable by 1
