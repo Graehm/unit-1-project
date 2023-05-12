@@ -85,11 +85,11 @@ function findWinner() {
         if (Math.abs(board[2] + board[4] + board[6]) === 3)
             return board[2];
     }
-    for let winner = 1 {
-        playerOneScore++;
-    }else if{
-        playerNegOne++;
-    } else if (tileCounter === 9) return "tie"
+    // for let winner = 1 {
+    //     playerOneScore++;
+    // }else if{
+    //     playerNegOne++;
+ if (tileCounter === 9) return "tie"
     return null
 };
 
