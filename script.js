@@ -30,8 +30,9 @@ const boardTiles = document.getElementById('board');
 const tilePL = document.querySelectorAll('.tile');
 const forfeitBtn = document.querySelector('.quit');
 const playAgainBtn = document.querySelector('.play');
-// const playerX = document.querySelector('.scoreOne');
-// const playerO = document.querySelector('.scoreTwo');
+
+const playerX = document.querySelector('.scoreOne');
+const playerO = document.querySelector('.scoreTwo');
 
 // /*----- event listeners -----*/
 
@@ -94,7 +95,7 @@ function render() {
     });
     renderWinningMsg();
     renderBtns();
-    // renderScoreBoard();
+    renderScoreBoard();
 };
 
 function renderWinningMsg() {
@@ -103,7 +104,7 @@ function renderWinningMsg() {
     } else if (winner === null) {
         winningMessage.textContent = `Player ${PLAYERS[turn]}'s Turn`;
     } else {
-        winningMessage.textContent = `Player ${PLAYERS[winner]} Wins!`;
+        winningMessage.textContent = `Player ${PLAYERS[winner]} Wins the Round!`;
     }
 };
 
@@ -117,7 +118,29 @@ function renderBtns() {
 let playerOneScore = 0;
 // let playerNegOne = 0;
 
+// playerOneScore change to playerX and O respectively
+// cache or state variables at all
+// set threeWins to winner3x
+function renderScoreBoard(threeWins) {
+    let threeWins = 3;
+    let playerOneScore = 0;
+    let playerNegOne = 0;
+    while (playerOneScore < threeWins && playerNegOne < threeWins) {
+        const play = makeMove();
+        if (playerOneScore === winner) {
+            playerOneScore++;
+        } else if (playerNegOne === winner) {
+            playerNegOne++;
+        }
+    }renderScoreBoard();
+    if (playerOneScore || playerNegOne === threeWins) {
+        winningMessage = textContent = `Player ${PLAYERS[winner]} Wins the Game!`;
+        playAgainBtn
+    }
+};
 
+
+// ---------------------------------------------------------------
 // function renderScoreBoard() {
 //     document.querySelector('.scoreOne').textContent = xScore;
 //     document.querySelector('.scoreTwo').textContent = oScore;
@@ -137,26 +160,6 @@ let playerOneScore = 0;
 //         }
 //     }
 // };
-
-function renderRounds(threeWins) {
-    let playerOneScore = 0;
-    let playerNegOne = 0;
-    while (playerOneScore < threeWins && playerNegOne < threeWins) {
-        const play = makeMove();
-        if (playerOneScore === winner) {
-            playerOneScore++;
-        } else if (playerNegOne === winner) {
-            playerNegOne++;
-        }
-    }renderScoreBoard();
-    if (playerOneScore || playerNegOne === threeWins) {
-        winningMessage = textContent = `Player ${PLAYERS[winner]} Wins the Game!`;
-        init();
-    }
-}
-
-// ---------------------------------------------------------------
-
 
 // // best three of 5 freq counter 
 // loop with counter 
