@@ -20,6 +20,7 @@ let turn;
 let winner;
 let board;
 let tileCounter = 0;
+let scores = 0;
 
 // /*----- cached elements  -----*/
 const winningMessage = document.querySelector('#message');
@@ -49,17 +50,13 @@ function init() {
     render();
 }
 
-//with safe guard, cann access first idx of all columns
 function makeMove(evt) {
     const tileNumber = evt.target.dataset.idx;
-    // if (winner || boardTiles[tileNumber]) return;
-    // if (boardTiles[tileNumber]) return;
+    if (winner || boardTiles[tileNumber]) return;
     board[tileNumber] = turn;
-    // console.log(findWinner());
     tileCounter++;
     winner = findWinner();
     render();
-
 }
 
 function findWinner() {
@@ -83,10 +80,6 @@ function findWinner() {
     }
     if (tileCounter === 9) return "tie"
     return null
-    
-    
-    // (board.includes(null));
-    // return 'tie';
 };
 // for (let winner = 0; winner <= 3; i++) {
 // if (winner === 1) {
@@ -109,16 +102,17 @@ function render() {
 function renderWinningMsg() {
     if (winner === 'tie') {
         winningMessage.textContent = "It's A Tie!";
-    } else if (winner===null) {console.log("something");
+    } else if (winner === null) {
+        console.log("something");
         winningMessage.textContent = `Player ${PLAYERS[turn]}'s Turn`;
-    } else { 
+    } else {
         winningMessage.textContent = `Player ${PLAYERS[winner]} Wins!`;
     }
 };
 
 function renderBtns() {
-    forfeitBtn.disabled = !winner;
-    playAgainBtn.disabled = winner;
+    forfeitBtn.disabled = winner;
+    playAgainBtn.disabled = !winner;
 };
 
 // function renderScoreBoard() {
