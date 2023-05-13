@@ -15,6 +15,9 @@ Game as it renders:
 HTML, CSS, JavaScript
 
 ## Getting Started
+Pseudo Code
+https://replit.com/join/ltfylrwruv-graehm
+Live Link:
 https://app.netlify.com/sites/exquisite-nougat-5d8b25/overview
 
 ## Next Steps/Icebox Items

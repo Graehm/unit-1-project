@@ -1,4 +1,3 @@
-// /*----- constants -----*/
 const PLAYERS = {
     'null': null,
     '1': 'X',
@@ -15,7 +14,6 @@ const winningCombos = [
     [2, 4, 6]
 ];
 
-// /*----- state variables -----*/
 let turn;
 let winner;
 let board;
@@ -23,7 +21,6 @@ let playerOneScore = 0;
 let playerNegOne = 0;
 let tileCounter = 0;
 
-// /*----- cached elements  -----*/
 const winningMessage = document.querySelector('#message');
 const boardTiles = document.getElementById('board');
 const tilePL = document.querySelectorAll('.tile');
@@ -32,23 +29,19 @@ const playAgainBtn = document.querySelector('.play');
 const playerX = document.querySelector('.scoreOne');
 const playerO = document.querySelector('.scoreTwo');
 
-// /*----- event listeners -----*/
-
 boardTiles.addEventListener('click', makeMove);
 forfeitBtn.addEventListener('click', init);
 playAgainBtn.addEventListener('click', init);
 
-// /*----- functions -----*/
 init();
 
 function init() {
     turn = 1;
     winner = null;
     board = [
-        [0, 0, 0], //col 0
-        [0, 0, 0], //col 1
-        [0, 0, 0], //col 2
-        // r0, r1, r2  
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
     ];
     tileCounter = 0;
     render();
@@ -125,5 +118,5 @@ function renderScoreBoard() {
         forfeitBtn.disabled = !winner;
         playerOneScore = 0;
         playerNegOne = 0;
-    } 
+    }
 };
