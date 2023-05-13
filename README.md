@@ -9,7 +9,7 @@ Played on a 3x3 grid, players take turns to connect rows of 3 while strategicall
 Tic tac toe is traced back to Egypt and the Roman Empire. Both made use of the 3x3 grid and the game rules. However, the name of the game and the markers used varied based on location. Egypt is known for using roof tiles, and the Romans using pebbles. The X's and O's and even the name "Tic Tac Toe" that we are familaier today are a modern interpretation of the ancient game. Coincidently, Tic Tac Toe was one of the first video games (1952), and this is my first ever computer program. 
 
 ## Image screenshot
-<img width="923" alt="Screenshot 2023-05-11 at 7 24 15 PM" src="https://github.com/Graehm/unit-1-project/assets/127685086/04720754-c2af-4874-a6c7-43c412165947">
+<img width="1145" alt="Screenshot 2023-05-12 at 10 27 24 PM" src="https://github.com/Graehm/unit-1-project/assets/127685086/6d7d1e9f-a29a-48f6-a070-a11eab1767aa">
 
 ## Technologies include:
 HTML, CSS, JavaScript

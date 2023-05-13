@@ -19,8 +19,8 @@ const winningCombos = [
 let turn;
 let winner;
 let board;
-let playerOneScore = 0;
-let playerNegOne = 0;
+let playerOneScore = 3;
+let playerNegOne = 2;
 let tileCounter = 0;
 
 // /*----- cached elements  -----*/
