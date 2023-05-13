@@ -19,9 +19,10 @@ const winningCombos = [
 let turn;
 let winner;
 let board;
-let tileCounter = 0;
-let playerOneScore = 1;
+let playerOneScore = 0;
 let playerNegOne = 0;
+let tileCounter = 0;
+// let score = 0;
 
 // /*----- cached elements  -----*/
 const winningMessage = document.querySelector('#message');
@@ -29,7 +30,6 @@ const boardTiles = document.getElementById('board');
 const tilePL = document.querySelectorAll('.tile');
 const forfeitBtn = document.querySelector('.quit');
 const playAgainBtn = document.querySelector('.play');
-
 const playerX = document.querySelector('.scoreOne');
 const playerO = document.querySelector('.scoreTwo');
 
@@ -84,8 +84,14 @@ function findWinner() {
         if (Math.abs(board[2] + board[4] + board[6]) === 3)
             return board[2];
     }
- if (tileCounter === 9) return "tie"
-    return null
+    if (tileCounter === 9) return "tie"
+    if (playerOneScore.winner === 1) {
+        playerOneScore++
+    } else if (playerNegOne.winner === 1)
+        playerNegOne++;
+    
+    return null;
+
 };
 
 // for (let winner = 0; winner <= 3; i++) {
@@ -121,31 +127,34 @@ function renderBtns() {
 
 // --------------------------------------------------------------------
 
-
+// function keepScore() {
+//     score = tileCounter
+//     if (winner === 1) {
+//         playerOneScore++;
+//     } else {
+//         playerNegOne++;
+//     }
+// };
 
 
 function renderScoreBoard() {
     playerX.textContent = playerOneScore;
     playerO.textContent = playerNegOne;
-
-    playerOneScore++;
-
-
-
-
+    
+    // playerOneScore++;
     // playerOneScore = 0;
     // playerNegOne = 0;
     // while (playerOneScore < threeWins && playerNegOne < threeWins) {
-        // makeMove();
-//         if (playerOneScore >= 3) {
-//             playerOneScore++;
-//         } else if (playerNegOne === winner) {
-//             playerNegOne++;
-//         }    
-//     if (playerOneScore || playerNegOne === threeWins) {
-//         winningMessage = textContent = `Player ${PLAYERS[winner]} Wins the Game!`;
-//         playAgainBtn
-//     }
+    // makeMove();
+    //         if (playerOneScore >= 3) {
+    //             playerOneScore++;
+    //         } else if (playerNegOne === winner) { 
+    //             playerNegOne++;
+    //         }    
+    //     if (playerOneScore || playerNegOne === threeWins) {
+    //         winningMessage = textContent = `Player ${PLAYERS[winner]} Wins the Game!`;
+    //         playAgainBtn
+    //     }
 
 };
 
