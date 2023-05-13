@@ -115,15 +115,12 @@ function renderBtns() {
     playAgainBtn.disabled = !winner;
 };
 
-// --------------------------------------------------------------------
-
-
 function renderScoreBoard() {
     playerX.textContent = playerOneScore;
     playerO.textContent = playerNegOne;
-    if (winner === playerOneScore) {
+    if (winner === 1) {
         playerOneScore++;
-    } else if (winner === playerNegOne) {
+    } else if (winner === 1) {
         playerNegOne++;
     } 
 };
