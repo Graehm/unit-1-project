@@ -1,8 +1,3 @@
-need help w/:
-1.--btn doesnt accept winning combos
-2.--score board updates and quits game at 3 wins
-
-
 # Tic Tac Toe!
 Played on a 3x3 grid, players take turns to connect rows of 3 while strategically positioning themselves on the board to prevent their opponent from completing a row of 3. 
 
@@ -18,7 +13,8 @@ HTML, CSS, JavaScript
 https://app.netlify.com/sites/exquisite-nougat-5d8b25/overview
 
 ## Next Steps/Icebox Items
-I hope to add sound effects to the game board, and winning message. Additionally, I'd like to add an AI feature making the game single player. 
+Next steps will be completing the best of 5 functionality. From there, I want to take the game to the next level by adding a play-the-computer mode. Looking into expanding the grid to a 4x4 or 5x5 based on level. 
+
 
 
 

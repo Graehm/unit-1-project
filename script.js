@@ -19,8 +19,8 @@ const winningCombos = [
 let turn;
 let winner;
 let board;
-let playerOneScore = 3;
-let playerNegOne = 2;
+let playerOneScore = 0;
+let playerNegOne = 0;
 let tileCounter = 0;
 
 // /*----- cached elements  -----*/
@@ -84,9 +84,9 @@ function findWinner() {
             return board[2];
     }
     if (tileCounter === 9) return "tie"
-    if (winner === playerOneScore) {
+    if (winner === 1) {
         playerOneScore++
-    } else if (winner === playerNegOne)
+    } else if (winner === 1)
         playerNegOne++;
     return null;
 };
@@ -117,15 +117,6 @@ function renderBtns() {
 
 // --------------------------------------------------------------------
 
-// function keepScore() {
-//     score = tileCounter
-//     if (winner === 1) {
-//         playerOneScore++;
-//     } else {
-//         playerNegOne++;
-//     }
-// };
-
 
 function renderScoreBoard() {
     playerX.textContent = playerOneScore;
@@ -136,6 +127,16 @@ function renderScoreBoard() {
         playerNegOne++;
     } 
 };
+
+
+// function keepScore() {
+//     score = tileCounter
+//     if (winner === 1) {
+//         playerOneScore++;
+//     } else {
+//         playerNegOne++;
+//     }
+// };
 
 
         // else (winner >= 3) 
