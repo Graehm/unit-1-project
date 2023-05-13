@@ -22,7 +22,6 @@ let board;
 let playerOneScore = 0;
 let playerNegOne = 0;
 let tileCounter = 0;
-// let score = 0;
 
 // /*----- cached elements  -----*/
 const winningMessage = document.querySelector('#message');
@@ -89,17 +88,8 @@ function findWinner() {
         playerOneScore++
     } else if (playerNegOne.winner === 1)
         playerNegOne++;
-    
     return null;
-
 };
-
-// for (let winner = 0; winner <= 3; i++) {
-// if (winner === 1) {
-//     player1wins++;
-// } else {
-//     player2wins++
-// }
 
 function render() {
     tilePL.forEach(function (tileSG, idx) {
@@ -140,6 +130,16 @@ function renderBtns() {
 function renderScoreBoard() {
     playerX.textContent = playerOneScore;
     playerO.textContent = playerNegOne;
+    if (winner === playerOneScore) {
+        playerOneScore++;
+    } else if (winner === playerNegOne) {
+        playerNegOne++;
+    } 
+};
+
+
+        // else (winner >= 3) 
+    //     winningMessage.innerHTML = "You Win!"
     
     // playerOneScore++;
     // playerOneScore = 0;
@@ -156,43 +156,3 @@ function renderScoreBoard() {
     //         playAgainBtn
     //     }
 
-};
-
-
-
-
-
-// ---------------------------------------------------------------
-// function renderScoreBoard() {
-//     document.querySelector('.scoreOne').textContent = xScore;
-//     document.querySelector('.scoreTwo').textContent = oScore;
-//     // set i=findWinner?
-//     for (let winner = 0; winner >= 3; winner++) {
-//         if (xScore === 3) {
-//             xScore += 1 || end game;
-//         } else if (oScore = findWinner) {
-//             oScore += 1 || end game;
-//         } renderScoreBoard();
-//         if (xScore === 3) {
-//         game over && display winningMessage;
-
-//         }
-//         else if (oScore === 3) {
-//         game over && display winningMessage;
-//         }
-//     }
-// };
-
-// // best three of 5 freq counter 
-// loop with counter 
-//     for (let i = 0; i>1; i++){
-//     } 
-//     repeat until i>=3 
-//     then findWinner();
-
-// for (let winner = 0; winner <= 3; i++) {
-// if (winner === 1) {
-//     player1wins++;
-// } else {
-//     player2wins++
-// }
