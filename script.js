@@ -120,7 +120,7 @@ function renderScoreBoard() {
     playerO.textContent = playerNegOne;
     if (winner === 1) {
         playerOneScore++;
-    } else if (winner === 1) {
+    } else if (winner === -1) {
         playerNegOne++;
     } 
 };
