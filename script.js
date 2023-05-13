@@ -121,6 +121,9 @@ function renderScoreBoard() {
         playerNegOne++;
     if (playerOneScore === 3 || playerNegOne === 3) {
         winningMessage.textContent = "Game Over!";
-        
+        playAgainBtn.disabled = winner;
+        forfeitBtn.disabled = !winner;
+        playerOneScore = 0;
+        playerNegOne = 0;
     } 
 };
