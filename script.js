@@ -84,9 +84,9 @@ function findWinner() {
             return board[2];
     }
     if (tileCounter === 9) return "tie"
-    if (playerOneScore.winner === 1) {
+    if (winner === playerOneScore) {
         playerOneScore++
-    } else if (playerNegOne.winner === 1)
+    } else if (winner === playerNegOne)
         playerNegOne++;
     return null;
 };

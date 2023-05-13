@@ -15,7 +15,7 @@ Tic tac toe is traced back to Egypt and the Roman Empire. Both made use of the 3
 HTML, CSS, JavaScript
 
 ## Getting Started
-link: (http://127.0.0.1:5500/)
+https://app.netlify.com/sites/exquisite-nougat-5d8b25/overview
 
 ## Next Steps/Icebox Items
 I hope to add sound effects to the game board, and winning message. Additionally, I'd like to add an AI feature making the game single player. 
