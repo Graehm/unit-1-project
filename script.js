@@ -119,7 +119,8 @@ function renderScoreBoard() {
         playerOneScore++;
     } else if (winner === -1)
         playerNegOne++;
-    if (playerOneScore || playerNegOne === 3) {
+    if (playerOneScore === 3 || playerNegOne === 3) {
+        winningMessage.textContent = "Game Over!";
         
-    }
+    } 
 };
