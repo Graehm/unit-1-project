@@ -6,6 +6,8 @@ Tic tac toe is traced back to Egypt and the Roman Empire. Both made use of the 3
 Coincidently, Tic Tac Toe was one of the first video games (1952), and this is my first ever computer program. 
 
 ## Image screenshot
+<img width="789" alt="Screenshot 2023-05-13 at 9 42 12 AM" src="https://github.com/Graehm/unit-1-project/assets/127685086/464eedea-b60b-4d27-9ad7-0e016e94a2f6">
+
 <img width="1145" alt="Screenshot 2023-05-12 at 10 27 24 PM" src="https://github.com/Graehm/unit-1-project/assets/127685086/6d7d1e9f-a29a-48f6-a070-a11eab1767aa">
 
 ## Technologies include:
@@ -16,4 +18,3 @@ https://app.netlify.com/sites/exquisite-nougat-5d8b25/overview
 
 ## Next Steps/Icebox Items
 Next steps will be adding player descriptions to the best of 5 functionality and its scoring. From there, I want to take the game to the next level by adding a play-the-computer mode. Looking into expanding the grid to a 4x4 or 5x5 based on level. 
- 
