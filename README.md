@@ -15,4 +15,4 @@ HTML, CSS, JavaScript
 https://app.netlify.com/sites/exquisite-nougat-5d8b25/overview
 
 ## Next Steps/Icebox Items
-Next steps will be completing the best of 5 functionality. From there, I want to take the game to the next level by adding a play-the-computer mode. Looking into expanding the grid to a 4x4 or 5x5 based on level. 
+Next steps will be adding player descriptions to the best of 5 functionality and its scoring. From there, I want to take the game to the next level by adding a play-the-computer mode. Looking into expanding the grid to a 4x4 or 5x5 based on level. 

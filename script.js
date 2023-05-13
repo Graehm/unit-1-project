@@ -84,10 +84,6 @@ function findWinner() {
             return board[2];
     }
     if (tileCounter === 9) return "tie"
-    if (winner === 1) {
-        playerOneScore++
-    } else if (winner === 1)
-        playerNegOne++;
     return null;
 };
 
@@ -122,28 +118,14 @@ function renderScoreBoard() {
         playerOneScore++;
     } else if (winner === -1) {
         playerNegOne++;
-    } 
+    } else (playerOneScore || playerNegOne >=3) 
+        
 };
 
 
 // variable that accounts for turns 
 
-// for every click, increase the variable by 1
-
-
-// function keepScore() {
-//     score = tileCounter
-//     if (winner === 1) {
-//         playerOneScore++;
-//     } else {
-//         playerNegOne++;
-//     }
-// };
-
-
-        // else (winner >= 3) 
-    //     winningMessage.innerHTML = "You Win!"
-    
+   
     // playerOneScore++;
     // playerOneScore = 0;
     // playerNegOne = 0;
