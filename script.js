@@ -129,6 +129,11 @@ function renderScoreBoard() {
 };
 
 
+// variable that accounts for turns 
+
+// for every click, increase the variable by 1
+
+
 // function keepScore() {
 //     score = tileCounter
 //     if (winner === 1) {
