@@ -107,8 +107,9 @@ function renderWinningMsg() {
 };
 
 function renderBtns() {
-    forfeitBtn.disabled = winner;
     playAgainBtn.disabled = !winner;
+    forfeitBtn.disabled = winner;
+    if (forfeitBtn);
 };
 
 function renderScoreBoard() {
@@ -116,28 +117,9 @@ function renderScoreBoard() {
     playerO.textContent = playerNegOne;
     if (winner === 1) {
         playerOneScore++;
-    } else if (winner === -1) {
+    } else if (winner === -1)
         playerNegOne++;
-    } else (playerOneScore || playerNegOne >=3) 
+    if (playerOneScore || playerNegOne === 3) {
         
+    }
 };
-
-
-// variable that accounts for turns 
-
-   
-    // playerOneScore++;
-    // playerOneScore = 0;
-    // playerNegOne = 0;
-    // while (playerOneScore < threeWins && playerNegOne < threeWins) {
-    // makeMove();
-    //         if (playerOneScore >= 3) {
-    //             playerOneScore++;
-    //         } else if (playerNegOne === winner) { 
-    //             playerNegOne++;
-    //         }    
-    //     if (playerOneScore || playerNegOne === threeWins) {
-    //         winningMessage = textContent = `Player ${PLAYERS[winner]} Wins the Game!`;
-    //         playAgainBtn
-    //     }
-
